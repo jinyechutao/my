@@ -1,5 +1,7 @@
 package fulijisuan;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -40,28 +42,72 @@ public class text1 extends JFrame {
 
 	private void initComponents() {
 		setLayout(new GroupLayout());
-		add(getJTextField4(), new Constraints(new Leading(123, 96, 10, 10), new Leading(200, 12, 12)));
-		add(getJTextField3(), new Constraints(new Leading(124, 94, 12, 12), new Leading(156, 12, 12)));
-		add(getJTextField2(), new Constraints(new Leading(124, 94, 12, 12), new Leading(111, 12, 12)));
-		add(getJTextField0(), new Constraints(new Leading(125, 95, 12, 12), new Leading(18, 12, 12)));
-		add(getJTextField1(), new Constraints(new Leading(125, 92, 12, 12), new Leading(64, 12, 12)));
-		add(getJLabel4(), new Constraints(new Leading(72, 12, 12), new Leading(202, 12, 12)));
-		add(getJLabel3(), new Constraints(new Leading(72, 12, 12), new Leading(158, 12, 12)));
-		add(getJButton0(), new Constraints(new Leading(30, 10, 10), new Leading(305, 29, 10, 10)));
-		add(getJButton1(), new Constraints(new Leading(137, 10, 10), new Leading(305, 12, 12)));
-		add(getJButton2(), new Constraints(new Leading(220, 12, 12), new Leading(305, 12, 12)));
-		add(getJLabel1(), new Constraints(new Leading(70, 12, 12), new Leading(68, 13, 12, 12)));
-		add(getJLabel2(), new Constraints(new Leading(72, 12, 12), new Leading(111, 12, 12)));
-		add(getJLabel0(), new Constraints(new Leading(70, 12, 12), new Leading(20, 12, 12)));
 		add(getJRadioButton0(), new Constraints(new Leading(259, 10, 10), new Leading(120, 12, 12)));
 		add(getJComboBox0(), new Constraints(new Leading(266, 10, 10), new Leading(50, 12, 12)));
-		setSize(395, 388);
+		add(getJTextField0(), new Constraints(new Leading(139, 95, 10, 10), new Leading(20, 12, 12)));
+		add(getJTextField1(), new Constraints(new Leading(140, 92, 12, 12), new Leading(64, 12, 12)));
+		add(getJTextField4(), new Constraints(new Leading(140, 96, 12, 12), new Leading(200, 12, 12)));
+		add(getJTextField3(), new Constraints(new Leading(140, 94, 12, 12), new Leading(156, 12, 12)));
+		add(getJTextField2(), new Constraints(new Leading(141, 94, 12, 12), new Leading(111, 10, 10)));
+		add(getJLabel3(), new Constraints(new Leading(8, 12, 12), new Leading(158, 12, 12)));
+		add(getJLabel2(), new Constraints(new Leading(90, 12, 12), new Leading(113, 12, 12)));
+		add(getJLabel4(), new Constraints(new Leading(51, 12, 12), new Leading(202, 12, 12)));
+		add(getJLabel1(), new Constraints(new Leading(89, 12, 12), new Leading(68, 13, 12, 12)));
+		add(getJLabel0(), new Constraints(new Leading(33, 12, 12), new Leading(20, 12, 12)));
+		add(getJButton0(), new Constraints(new Leading(30, 10, 10), new Leading(281, 29, 10, 10)));
+		add(getJButton1(), new Constraints(new Leading(139, 12, 12), new Leading(282, 12, 12)));
+		add(getJButton2(), new Constraints(new Leading(219, 10, 10), new Leading(281, 12, 12)));
+		add(getJLabel9(), new Constraints(new Leading(143, 12, 12), new Leading(182, 12, 12)));
+		add(getJLabel10(), new Constraints(new Leading(143, 12, 12), new Leading(228, 12, 12)));
+		add(getJLabel8(), new Constraints(new Leading(141, 12, 12), new Leading(134, 12, 12)));
+		add(getJLabel7(), new Constraints(new Leading(141, 12, 12), new Leading(89, 12, 12)));
+		add(getJLabel6(), new Constraints(new Leading(141, 12, 12), new Leading(44, 12, 12)));
+		setSize(395, 364);
+	}
+
+	private JLabel getJLabel10() {
+		if (jLabel10 == null) {
+			jLabel10 = new JLabel();
+			jLabel10.setText(null);
+		}
+		return jLabel10;
+	}
+
+	private JLabel getJLabel9() {
+		if (jLabel9 == null) {
+			jLabel9 = new JLabel();
+			jLabel9.setText(null);
+		}
+		return jLabel9;
+	}
+
+	private JLabel getJLabel8() {
+		if (jLabel8 == null) {
+			jLabel8 = new JLabel();
+			jLabel8.setText(null);
+		}
+		return jLabel8;
+	}
+
+	private JLabel getJLabel7() {
+		if (jLabel7 == null) {
+			jLabel7 = new JLabel();
+			jLabel7.setText(null);
+		}
+		return jLabel7;
+	}
+
+	private JLabel getJLabel6() {
+		if (jLabel6 == null) {
+			jLabel6 = new JLabel();
+			jLabel6.setText(null);
+		}
+		return jLabel6;
 	}
 
 	private JRadioButton getJRadioButton0() {
 		if (jRadioButton0 == null) {
 			jRadioButton0 = new JRadioButton();
-			jRadioButton0.setSelected(false);
 			jRadioButton0.setText("每年投入年金");
 			jRadioButton0.addMouseListener(new MouseAdapter() {
 	
@@ -76,7 +122,7 @@ public class text1 extends JFrame {
 	private JComboBox getJComboBox0() {
 		if (jComboBox0 == null) {
 			jComboBox0 = new JComboBox();
-			jComboBox0.setModel(new DefaultComboBoxModel(new Object[] { "算存款", "算本金", "算利率", "算年限" }));
+			jComboBox0.setModel(new DefaultComboBoxModel(new Object[] { "算存款", "算本金", "算利率", "算年限" ,"算还款金额"}));
 			jComboBox0.setDoubleBuffered(false);
 			jComboBox0.setBorder(null);
 			jComboBox0.addMouseListener(new MouseAdapter() {
@@ -88,7 +134,20 @@ public class text1 extends JFrame {
 	private JTextField getJTextField4() {
 		if (jTextField4 == null) {
 			jTextField4 = new JTextField();
-		}
+		}	
+		jTextField4.addKeyListener(new KeyAdapter(){
+			public void keyTyped(KeyEvent e){
+				jLabel10.setText(null);
+				int keyChar = e.getKeyChar();
+				if(keyChar >=KeyEvent.VK_0&&keyChar <= KeyEvent.VK_9||keyChar =='.'){
+					
+				}
+				else{
+					e.consume();
+					jLabel10.setText("请输入数字！");
+				}
+			}
+		});
 		return jTextField4;
 	}
 
@@ -96,6 +155,19 @@ public class text1 extends JFrame {
 		if (jTextField3 == null) {
 			jTextField3 = new JTextField();
 		}
+		jTextField3.addKeyListener(new KeyAdapter(){
+			public void keyTyped(KeyEvent e){
+				jLabel9.setText(null);
+				int keyChar = e.getKeyChar();
+				if(keyChar >=KeyEvent.VK_0&&keyChar <= KeyEvent.VK_9||keyChar =='.'){
+					
+				}
+				else{
+					e.consume();
+					jLabel9.setText("请输入数字！");
+				}
+			}
+		});
 		return jTextField3;
 	}
 
@@ -116,7 +188,7 @@ public class text1 extends JFrame {
 	private JLabel getJLabel4() {
 		if (jLabel4 == null) {
 			jLabel4 = new JLabel();
-			jLabel4.setText("利息：");
+			jLabel4.setText("（总）利息：");
 		}
 		return jLabel4;
 	}
@@ -124,7 +196,7 @@ public class text1 extends JFrame {
 	private JLabel getJLabel3() {
 		if (jLabel3 == null) {
 			jLabel3 = new JLabel();
-			jLabel3.setText("存款：");
+			jLabel3.setText("余额\\须还款（月）：");
 		}
 		return jLabel3;
 	}
@@ -133,6 +205,19 @@ public class text1 extends JFrame {
 		if (jTextField2 == null) {
 			jTextField2 = new JTextField();
 		}
+		jTextField2.addKeyListener(new KeyAdapter(){
+			public void keyTyped(KeyEvent e){
+				jLabel8.setText(null);
+				int keyChar = e.getKeyChar();
+				if(keyChar >=KeyEvent.VK_0&&keyChar <= KeyEvent.VK_9||keyChar =='.'){
+					
+				}
+				else{
+					e.consume();
+					jLabel8.setText("请输入数字！");
+				}
+			}
+		});
 		return jTextField2;
 	}
 
@@ -140,12 +225,38 @@ public class text1 extends JFrame {
 		if (jTextField1 == null) {
 			jTextField1 = new JTextField();
 		}
+		jTextField1.addKeyListener(new KeyAdapter(){
+			public void keyTyped(KeyEvent e){
+				jLabel7.setText(null);
+				int keyChar = e.getKeyChar();
+				if(keyChar >=KeyEvent.VK_0&&keyChar <= KeyEvent.VK_9||keyChar =='.'){
+					
+				}
+				else{
+					e.consume();
+					jLabel7.setText("请输入数字！");
+				}
+			}
+		});
 		return jTextField1;
 	}
 
 	private JTextField getJTextField0() {
 		if (jTextField0 == null) {
 			jTextField0 = new JTextField();
+		jTextField0.addKeyListener(new KeyAdapter(){
+			public void keyTyped(KeyEvent e){
+				jLabel6.setText(null);
+				int keyChar = e.getKeyChar();
+				if(keyChar >=KeyEvent.VK_0&&keyChar <= KeyEvent.VK_9||keyChar =='.'){
+					
+				}
+				else{
+					e.consume();
+					jLabel6.setText("请输入数字！");
+				}
+			}
+		});
 		}
 		return jTextField0;
 	}
@@ -169,7 +280,7 @@ public class text1 extends JFrame {
 	private JLabel getJLabel0() {
 		if (jLabel0 == null) {
 			jLabel0 = new JLabel();
-			jLabel0.setText("本金：");
+			jLabel0.setText("本金\\贷款金额：");
 		}
 		return jLabel0;
 	}
@@ -217,6 +328,11 @@ public class text1 extends JFrame {
 	private JTextField jTextField5;
 	private JLabel jLabel5;
 	private JRadioButton jRadioButton0;
+	private JLabel jLabel6;
+	private JLabel jLabel7;
+	private JLabel jLabel8;
+	private JLabel jLabel9;
+	private JLabel jLabel10;
 	private static final String PREFERRED_LOOK_AND_FEEL = "javax.swing.plaf.metal.MetalLookAndFeel";
 	public static void main(String[] args) {
 		installLnF();
@@ -245,11 +361,12 @@ public class text1 extends JFrame {
 		 n = Double.parseDouble(jTextField2.getText());
 			 p = Double.parseDouble(jTextField0.getText()); 
 			 if(y==true){
+				 double p2=p;
 		 for(int a = 0;a < n;a++){
 			 p = p+f;
 		 f = p * (1 + i); 
 		 } 
-		 j = f - p;  
+		 j = f - (n*p2);  
 			 }
 			 else{
 				 for(int a = 0;a < n;a++){ 
@@ -288,10 +405,21 @@ public class text1 extends JFrame {
 			 p = Double.parseDouble(jTextField0.getText()); 
 			 i = Double.parseDouble(jTextField1.getText());
 			 f = Double.parseDouble(jTextField3.getText()); 
-			 n = Logarithm.log(f/p, 1+i); 
+			 n = Logarithm.log(f/p,1+i); 
 			 j=f-p;			 
 			this.jTextField2.setText(String.format("%.2f", n)); 
 		 this.jTextField4.setText(String.format("%.2f", j));
+		 }	
+		 else if(key == "算还款金额"){	
+			 p = Double.parseDouble(jTextField0.getText()); 
+			 i = Double.parseDouble(jTextField1.getText());
+			 n = Double.parseDouble(jTextField2.getText()); 
+			 i = i/12;
+			 n = n*12;
+			 f = p*i*Math.pow(1+i,n)/(Math.pow(1+i, n)-1);
+			 j= f*12*n - p;		 
+			this.jTextField3.setText(String.format("%.2f", f)); 
+			this.jTextField4.setText(String.format("%.2f", j));
 		 }
 	}
 
@@ -312,10 +440,15 @@ public class text1 extends JFrame {
 		 n = Double.parseDouble(jTextField2.getText());
 		 p = Double.parseDouble(jTextField0.getText()); 
 		 if(y==true)
-			 j=p*n*i*n;
+		 {
+			 j=p*n*i*n;	
+			 f=j+p*n; 
+		 }
 		 else
+			 {
 			 j=p*i*n;
-		 f=j+p;  
+		 f = j+p;
+			 }
 		 this.jTextField3.setText(String.format("%.2f", f)); 
 		 this.jTextField4.setText(String.format("%.2f", j));
 		 }
@@ -347,6 +480,7 @@ public class text1 extends JFrame {
 			this.jTextField2.setText(String.format("%.2f", n)); 
 			this.jTextField4.setText(String.format("%.2f", j));
 		 }
+
 	}
 
 	private void jRadioButton0MouseMouseClicked(MouseEvent event) {
@@ -355,5 +489,4 @@ public class text1 extends JFrame {
 		else
 			y=false;
 	}
-
 }
