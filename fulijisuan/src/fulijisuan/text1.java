@@ -417,7 +417,7 @@ public class text1 extends JFrame {
 			 i = i/12;
 			 n = n*12;
 			 f = p*i*Math.pow(1+i,n)/(Math.pow(1+i, n)-1);
-			 j= f*12*n - p;		 
+			 j= f*n - p;		 
 			this.jTextField3.setText(String.format("%.2f", f)); 
 			this.jTextField4.setText(String.format("%.2f", j));
 		 }
